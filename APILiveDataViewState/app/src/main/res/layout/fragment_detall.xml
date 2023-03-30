@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_pr">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivImageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ivTxtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_64"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/txtPadding_6dp"
+            android:text=""
+            android:textColor="@color/color_spr"
+            android:textSize="@dimen/txtSize_15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivImageView" />
+
+        <TextView
+            android:id="@+id/ivTxtStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_64"
+            android:padding="@dimen/txtPadding_6dp"
+            android:text=""
+            android:textColor="@color/color_spr"
+            android:textSize="@dimen/txtSize_15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTxtName" />
+
+        <TextView
+            android:id="@+id/ivTxtSpecie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_64"
+            android:padding="@dimen/txtPadding_6dp"
+            android:text=""
+            android:textColor="@color/color_spr"
+            android:textSize="@dimen/txtSize_15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTxtStatus" />
+
+        <TextView
+            android:id="@+id/ivTxtGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_64"
+            android:contentDescription="Imagem dos personagens Rick And Morty"
+            android:padding="@dimen/txtPadding_6dp"
+            android:text=""
+            android:textColor="@color/color_spr"
+            android:textSize="@dimen/txtSize_15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTxtSpecie" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
