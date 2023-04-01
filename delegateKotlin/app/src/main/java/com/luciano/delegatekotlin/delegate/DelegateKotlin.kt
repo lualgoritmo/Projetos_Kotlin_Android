@@ -30,12 +30,21 @@ fun main() {
     println(teste.name())
     println(teste.getFrase())
     println(teste.numberOne())
+    println(teste.numberTwo())
     println(teste.numberTree())
+
+    println("Usando todas com o by lazy")
+    println(teste2.first())
+    println(teste2.name())
+    println(teste2.getFrase())
+    println(teste2.numberOne())
+    println(teste2.numberTwo())
+    println(teste2.numberTree())
 }
 
 interface returnString {
     fun name()
-    fun getFrase()
+    fun getFrase(): String
     fun first(): Int
 }
 
@@ -46,12 +55,12 @@ interface numberInt {
 }
 
 class ReturnStringImpl() : returnString, numberInt {
-    override fun name() = println("Luana Gostosa")
-    override fun getFrase() = println("A volta dos que não foram")
+    override fun name() = println("Luana Gostosa 1")
+    override fun getFrase(): String = "A volta dos que não foram 2"
     override fun first(): Int = 44
     override fun numberOne(): Int = 1
     override fun numberTwo(): Int = 2
-    override fun numberTree() = println("3")
+    override fun numberTree() = println("3 String")
 }
 
 val teste by lazy { ReturnStringImpl() }
@@ -59,3 +68,5 @@ val teste by lazy { ReturnStringImpl() }
 class DelegateString : returnString by ReturnStringImpl()
 
 class delegateTwo : returnString by ReturnStringImpl(), numberInt by ReturnStringImpl()
+
+val teste2 by lazy { ReturnStringImpl() }
