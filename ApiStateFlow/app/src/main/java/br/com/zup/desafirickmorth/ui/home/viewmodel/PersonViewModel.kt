@@ -17,12 +17,22 @@ class PersonViewModel(private val useCase: PersonUseCase) : ViewModel() {
     fun getAllPeson() {
         viewModelScope.launch {
             _personResponse.value = PersonStateFlow.Loading
-            val response = useCase.getAllPerson()
-            if (response.isNotEmpty()) {
-                _personResponse.value = PersonStateFlow.Success(response)
-            } else {
-                _personResponse.value = PersonStateFlow.Error("Erro aqui")
+            try {
+                val response = useCase.getAllPerson()
+                _personResponse.value = if (response.isNotEmpty()) {
+                    PersonStateFlow.Success(response)
+                } else {
+                    PersonStateFlow.Error("Deu erro")
+                }
+            } catch (ex: Exception) {
+                PersonStateFlow.Error(ex.message ?: "Erro aqui")
             }
+//            val response = useCase.getAllPerson()
+//            if (response.isNotEmpty()) {
+//                _personResponse.value = PersonStateFlow.Success(response)
+//            } else {
+//                _personResponse.value = PersonStateFlow.Error("Erro aqui")
+//            }
 
 //            try {
 //                 val response = useCase.getAllPerson()
