@@ -4,5 +4,5 @@ import br.com.zup.desafirickmorth.domain.useCase.PersonUseCase
 import org.koin.dsl.module
 
 val useCaseModule = module {
-    single { PersonUseCase(get()) }
+    factory { PersonUseCase(get()) }
 }
